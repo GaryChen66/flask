@@ -16,6 +16,8 @@ from werkzeug.local import LocalProxy
 
 from .globals import request
 
+# log function
+
 
 @LocalProxy
 def wsgi_errors_stream():
@@ -64,10 +66,10 @@ def _has_config(logger):
     :param logger: The :class:`~logging.Logger` to inspect.
     """
     return (
-        logger.level != logging.NOTSET
-        or logger.handlers
-        or logger.filters
-        or not logger.propagate
+        logger.level != logging.NOTSET or
+        logger.handlers or
+        logger.filters or
+        not logger.propagate
     )
 
 
@@ -96,7 +98,8 @@ def create_logger(app):
                 "'app.logger' is named '{name}' for this application,"
                 " but configuration was found for '{old_name}', which"
                 " no longer has an effect. The logging configuration"
-                " should be moved to '{name}'.".format(name=app.name, old_name=old_name)
+                " should be moved to '{name}'.".format(
+                    name=app.name, old_name=old_name)
             )
             break
 
