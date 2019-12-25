@@ -9,6 +9,8 @@
     :copyright: 2010 Pallets
     :license: BSD-3-Clause
 """
+
+#siginal function
 try:
     from blinker import Namespace
 
