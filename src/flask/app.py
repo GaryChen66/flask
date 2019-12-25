@@ -8,6 +8,8 @@
     :copyright: 2010 Pallets
     :license: BSD-3-Clause
 """
+
+#import app settings
 import os
 import sys
 import warnings
